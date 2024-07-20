@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.10 (django_orm)" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10 (django_orm)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8 (Django_ORM)" project-jdk-type="Python SDK" />
 </project>

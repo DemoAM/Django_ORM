@@ -1,15 +1,16 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from account.views import SignUpView, EmployeeUserViewSet
-from .views import login
+from account.views import EmployeeUserViewSet
+from .views import RegisterView, LoginView,UserProfile
 
 
 router = DefaultRouter()
-router.register("signup", SignUpView, basename="logup")
 router.register("employee", EmployeeUserViewSet, basename="employee")
+router.register("signup", RegisterView, basename="logup")
+router.register('profile', UserProfile, basename="profile")
 
 
 urlpatterns = [
     path("api/", include(router.urls)),
-    path("api/login/", login, name="login"),
+    path("api/login/", LoginView.as_view()),
 ]

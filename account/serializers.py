@@ -4,7 +4,7 @@ from account.models import User
 from account.models import Role
 
 
-class SignUpSerializer(serializers.ModelSerializer):
+class LogUpSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ["username", "name", "email", "password"]
@@ -51,6 +51,15 @@ class EmployeeUserSerializer(serializers.ModelSerializer):
 
 
 class LoginSerializer(serializers.Serializer):
+    email = serializers.EmailField(required=True, max_length=255)
+    password = serializers.CharField(max_length=255)
+
     class Meta:
         model = User
         fields = ["email", "password"]
+
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ["email", "name", "username"]
